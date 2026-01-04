@@ -1,0 +1,19 @@
+# Ignore node modules and build artifacts
+node_modules/
+dist/
+build/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore git
+.git/
+.gitignore
+
+# Ignore documentation that shouldn't be in the image
+README.md
