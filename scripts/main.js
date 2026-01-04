@@ -143,7 +143,7 @@ if (prefersReducedMotion.matches) {
 
 // Console Easter Egg
 console.log('%c¡Hola! 👋', 'font-size: 20px; font-weight: bold; color: #3b82f6;');
-console.log('%c¿Interesado en el código? Visita mi GitHub o contáctame en raykumar@gmail.com', 'font-size: 14px; color: #8b5cf6;');
+console.log('%c¿Interesado en el código? Visita mi GitHub o contáctame en rkbe.tech@gmail.com', 'font-size: 14px; color: #8b5cf6;');
 console.log('%cBuilt with ❤️ by Raj Kumar Bhag', 'font-size: 12px; color: #666;');
 
 // Contact Form Handling

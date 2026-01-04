@@ -120,7 +120,7 @@ sudo certbot --nginx -d rkbe.tech -d www.rkbe.tech
 
 ## 📞 Contacto
 
-- **Email**: raykumar@gmail.com
+- **Email**: rkbe.tech@gmail.com
 - **LinkedIn**: [Raj Kumar Bhag](https://www.linkedin.com/in/raj-kumar-bhag-chandani-escobar-0b6072118/)
 - **GitHub**: [rajkumarbhag](https://github.com/rajkumarbhag)
 - **Ubicación**: Ciudad del Este, Paraguay
