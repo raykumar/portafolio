@@ -12,7 +12,11 @@ Visita el sitio en: [rkbe.tech](https://rkbe.tech)
 - 🎨 Animaciones suaves y efectos interactivos
 - 📱 Totalmente responsive (móvil, tablet, desktop)
 - ⚡ Rendimiento optimizado con HTML/CSS/JavaScript puro
-- 🎯 SEO optimizado
+- 🎯 SEO optimizado con structured data (JSON-LD)
+- 📧 Formulario de contacto funcional con Formspree
+- 📊 Google Analytics 4 integrado
+- 🖼️ Open Graph images para redes sociales
+- 🔒 Headers de seguridad configurados
 
 ## 📋 Secciones
 
@@ -20,8 +24,7 @@ Visita el sitio en: [rkbe.tech](https://rkbe.tech)
 - **Servicios**: Propuesta, Desarrollo, Despliegue y Mantenimiento
 - **Proyectos Destacados**: Neuromulti y LavApp
 - **Sobre mí**: Experiencia profesional y áreas de expertise
-- **Recomendaciones**: Testimonios de colaboraciones profesionales
-- **Contacto**: Información de contacto y redes sociales
+- **Contacto**: Formulario funcional y información de contacto
 
 ## 🛠️ Tecnologías
 
@@ -29,6 +32,8 @@ Visita el sitio en: [rkbe.tech](https://rkbe.tech)
 - CSS3 (Custom Properties, Grid, Flexbox, Animations)
 - JavaScript (ES6+, Intersection Observer API)
 - Google Fonts (Inter, Space Grotesk)
+- Google Analytics 4
+- Formspree (formulario de contacto)
 
 ## 💻 Instalación Local
 
@@ -62,12 +67,18 @@ php -S localhost:8000
 ```
 portafolio/
 ├── index.html          # Página principal
+├── robots.txt          # Instrucciones para crawlers
+├── sitemap.xml         # Mapa del sitio para SEO
+├── assets/
+│   ├── favicon.svg     # Favicon vectorial
+│   └── images/
+│       ├── favicon.png # Favicon PNG
+│       └── og-image.png # Open Graph image (1200x630)
 ├── styles/
 │   ├── main.css       # Estilos principales y sistema de diseño
 │   └── animations.css # Animaciones y efectos
-├── scripts/
-│   └── main.js        # Funcionalidad interactiva
-└── assets/            # Imágenes y recursos (futuro)
+└── scripts/
+    └── main.js        # Funcionalidad interactiva
 ```
 
 ## 🎨 Personalización
@@ -83,15 +94,40 @@ El sitio utiliza CSS Custom Properties para facilitar la personalización. Puede
 }
 ```
 
+## 🚀 Despliegue
+
+### VPS con Nginx
+
+1. Subir archivos al servidor:
+```bash
+rsync -avz --progress ./ user@vps-ip:/var/www/rkbe.tech/
+```
+
+2. Configurar Nginx (ver `docs/nginx.conf` para ejemplo)
+
+3. Configurar SSL con Let's Encrypt:
+```bash
+sudo certbot --nginx -d rkbe.tech -d www.rkbe.tech
+```
+
+## 📊 SEO y Analytics
+
+- **Google Analytics 4**: Configurado con ID `G-QXVQTBHVCL`
+- **Structured Data**: Schema.org Person implementado
+- **Sitemap**: `/sitemap.xml`
+- **Robots.txt**: `/robots.txt`
+- **Open Graph**: Meta tags completos para redes sociales
+
 ## 📞 Contacto
 
 - **Email**: raykumar@gmail.com
 - **LinkedIn**: [Raj Kumar Bhag](https://www.linkedin.com/in/raj-kumar-bhag-chandani-escobar-0b6072118/)
+- **GitHub**: [rajkumarbhag](https://github.com/rajkumarbhag)
 - **Ubicación**: Ciudad del Este, Paraguay
 
 ## 📄 Licencia
 
-© 2025 Raj Kumar Bhag. Todos los derechos reservados.
+© 2026 Raj Kumar Bhag. Todos los derechos reservados.
 
 ---
 

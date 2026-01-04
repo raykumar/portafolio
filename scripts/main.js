@@ -145,3 +145,65 @@ if (prefersReducedMotion.matches) {
 console.log('%c¡Hola! 👋', 'font-size: 20px; font-weight: bold; color: #3b82f6;');
 console.log('%c¿Interesado en el código? Visita mi GitHub o contáctame en raykumar@gmail.com', 'font-size: 14px; color: #8b5cf6;');
 console.log('%cBuilt with ❤️ by Raj Kumar Bhag', 'font-size: 12px; color: #666;');
+
+// Contact Form Handling
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+
+        // Show loading state
+        submitBtn.disabled = true;
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline';
+        formStatus.style.display = 'none';
+        formStatus.className = 'form-status';
+
+        // Get form data
+        const formData = new FormData(this);
+
+        try {
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Success
+                formStatus.textContent = '¡Mensaje enviado exitosamente! Te contactaré pronto.';
+                formStatus.classList.add('success');
+                formStatus.style.display = 'block';
+                this.reset();
+
+                // Track form submission in Google Analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submission', {
+                        'event_category': 'Contact',
+                        'event_label': 'Contact Form'
+                    });
+                }
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            // Error
+            formStatus.textContent = 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctame directamente por email.';
+            formStatus.classList.add('error');
+            formStatus.style.display = 'block';
+        } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            btnText.style.display = 'inline';
+            btnLoading.style.display = 'none';
+        }
+    });
+}

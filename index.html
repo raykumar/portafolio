@@ -10,14 +10,40 @@
     content="desarrollo software, automatización, SaaS, software a medida, Paraguay, IoT, fullstack developer">
   <meta name="author" content="Raj Kumar Bhag">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rkbe.tech">
-  <meta property="og:title" content="Raj Kumar Bhag - Desarrollador de Software">
+  <meta property="og:title" content="Raj Kumar Bhag - Desarrollador de Software Fullstack">
   <meta property="og:description"
     content="Más que un desarrollador - Solucionador de problemas. Especializado en software a medida, desde automatización hasta SaaS.">
+  <meta property="og:image" content="https://rkbe.tech/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Raj Kumar Bhag - Desarrollador de Software Fullstack">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://rkbe.tech">
+  <meta name="twitter:title" content="Raj Kumar Bhag - Desarrollador de Software Fullstack">
+  <meta name="twitter:description"
+    content="Transformando ideas en soluciones digitales. IoT, SaaS, Automatización y más.">
+  <meta name="twitter:image" content="https://rkbe.tech/assets/images/og-image.png">
 
   <title>Raj Kumar Bhag - Desarrollador de Software | rkbe.tech</title>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QXVQTBHVCL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QXVQTBHVCL');
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +58,50 @@
 </head>
 
 <body>
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Raj Kumar Bhag Chandani Escobar",
+    "jobTitle": "Desarrollador de Software Fullstack",
+    "description": "Ingeniero en Informática especializado en desarrollo de software fullstack, IoT, automatización y aplicaciones SaaS",
+    "url": "https://rkbe.tech",
+    "image": "https://rkbe.tech/assets/images/og-image.png",
+    "email": "raykumar@gmail.com",
+    "telephone": "+595973552058",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ciudad del Este",
+      "addressCountry": "PY"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/raj-kumar-bhag-chandani-escobar-0b6072118/",
+      "https://github.com/rajkumarbhag"
+    ],
+    "knowsAbout": [
+      "Desarrollo Web",
+      "IoT",
+      "Automatización",
+      "SaaS",
+      "React",
+      "Node.js",
+      "NestJS",
+      "PostgreSQL",
+      "Docker",
+      "DevOps"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Fundación Parque Tecnológico Itaipú",
+      "description": "Lab IoT - Laboratorio del Internet de las Cosas Industrial"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Universidad Americana"
+    }
+  }
+  </script>
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-container">
@@ -316,90 +386,97 @@
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonials">
+  <!-- Contact Form Section -->
+  <section id="contact" class="contact-section">
     <div class="container">
-      <div class="section-header text-center">
-        <h2 class="scroll-reveal">Recomendaciones</h2>
-        <p class="scroll-reveal delay-100">
-          Experiencias de colaboración profesional.
-        </p>
-      </div>
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info scroll-reveal">
+          <h2 class="mb-6">¿Listo para transformar tu idea en realidad?</h2>
+          <p class="mb-8">
+            Ya sea que necesites automatizar procesos, desarrollar una aplicación desde cero,
+            o escalar tu producto existente, estoy aquí para ayudarte a alcanzar tus objetivos.
+          </p>
 
-      <div class="testimonials-grid">
-        <div class="testimonial-card scroll-reveal delay-200">
-          <div class="testimonial-content">
-            <p class="testimonial-text">
-              "El sistema Neuromulti ha transformado completamente la gestión de nuestra clínica.
-              Raj no solo entregó un software funcional, sino una solución que realmente entiende
-              nuestras necesidades. Su compromiso con la calidad y atención al detalle es excepcional."
-            </p>
-          </div>
-          <div class="testimonial-author">
-            <div class="author-info">
-              <p class="author-name">Lic. Tamires Moura</p>
-              <p class="author-role">Clínica NeuroMulti</p>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="method-icon">📧</div>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:raykumar@gmail.com">raykumar@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="method-icon">📱</div>
+              <div>
+                <h4>Teléfono</h4>
+                <a href="tel:+595973552058">+595 973 552 058</a>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="method-icon">📍</div>
+              <div>
+                <h4>Ubicación</h4>
+                <p>Ciudad del Este, Paraguay</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="method-icon">💼</div>
+              <div>
+                <h4>LinkedIn</h4>
+                <a href="https://www.linkedin.com/in/raj-kumar-bhag-chandani-escobar-0b6072118/" target="_blank">
+                  Conectar en LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="testimonial-card scroll-reveal delay-300">
-          <div class="testimonial-content">
-            <p class="testimonial-text">
-              "Trabajar con Raj en el proyecto LavApp fue una experiencia excelente. Su capacidad
-              para traducir ideas complejas en soluciones técnicas elegantes, junto con su
-              comunicación clara durante todo el proceso, hizo que el desarrollo fuera fluido y exitoso."
-            </p>
-          </div>
-          <div class="testimonial-author">
-            <div class="author-info">
-              <p class="author-name">Bioq. Luz Monserrat Vargas</p>
-              <p class="author-role">CEO - LavApp</p>
+        <!-- Contact Form -->
+        <div class="contact-form-container scroll-reveal delay-200">
+          <form id="contactForm" class="contact-form" action="https://formspree.io/f/mwvpaope" method="POST">
+            <div class="form-group">
+              <label for="name">Nombre completo *</label>
+              <input type="text" id="name" name="name" required placeholder="Tu nombre" class="form-input">
             </div>
-          </div>
-        </div>
 
-        <div class="testimonial-card scroll-reveal delay-400">
-          <div class="testimonial-content">
-            <p class="testimonial-text">
-              "Como líder de proyecto, Raj ha demostrado una capacidad excepcional para
-              gestionar proyectos complejos de telemetría y automatización. Su habilidad para
-              comunicarse efectivamente con clientes de empresas que prestan servicios de suministro
-              de energía fue clave para el éxito de nuestros proyectos. Su experiencia en
-              tecnologías IoT y su enfoque metódico garantizan resultados de alta calidad."
-            </p>
-          </div>
-          <div class="testimonial-author">
-            <div class="author-info">
-              <p class="author-name">Ing. Enrique Flecha</p>
-              <p class="author-role">Jefe Laboratorio del Internet de las Cosas Industrial - Parque Tecnológico Itaipú
-              </p>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="tu@email.com" class="form-input">
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- CTA Section -->
-  <section id="contact" class="cta">
-    <div class="container">
-      <div class="cta-content text-center scroll-reveal">
-        <h2 class="cta-title mb-6">
-          ¿Listo para transformar tu idea en realidad?
-        </h2>
-        <p class="cta-subtitle mb-8">
-          Ya sea que necesites automatizar procesos, desarrollar una aplicación desde cero,
-          o escalar tu producto existente, estoy aquí para ayudarte a alcanzar tus objetivos.
-        </p>
-        <div class="cta-buttons">
-          <a href="mailto:raykumar@gmail.com" class="btn btn-primary btn-lg">
-            Contactar ahora
-          </a>
-          <a href="https://www.linkedin.com/in/raj-kumar-bhag-chandani-escobar-0b6072118/" target="_blank"
-            class="btn btn-outline btn-lg">
-            Conectar en LinkedIn
-          </a>
+            <div class="form-group">
+              <label for="phone">Teléfono</label>
+              <input type="tel" id="phone" name="phone" placeholder="+595 XXX XXX XXX" class="form-input">
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Asunto *</label>
+              <select id="subject" name="subject" required class="form-input">
+                <option value="">Selecciona un asunto</option>
+                <option value="proyecto-nuevo">Proyecto Nuevo</option>
+                <option value="consultoria">Consultoría</option>
+                <option value="mantenimiento">Mantenimiento/Soporte</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensaje *</label>
+              <textarea id="message" name="message" required rows="5" placeholder="Cuéntame sobre tu proyecto..."
+                class="form-input"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+              <span class="btn-text">Enviar mensaje</span>
+              <span class="btn-loading" style="display: none;">Enviando...</span>
+            </button>
+
+            <div class="form-status" id="formStatus"></div>
+          </form>
         </div>
       </div>
     </div>

@@ -813,14 +813,15 @@ section {
     color: var(--color-text-tertiary);
 }
 
-/* CTA Section */
-.cta {
+
+/* Contact Section */
+.contact-section {
     background: var(--color-bg-secondary);
     position: relative;
     overflow: hidden;
 }
 
-.cta::before {
+.contact-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -828,38 +829,171 @@ section {
     right: 0;
     bottom: 0;
     background: var(--color-accent-gradient);
-    opacity: 0.05;
+    opacity: 0.03;
     z-index: 0;
 }
 
-.cta-content {
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
     position: relative;
     z-index: 1;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
-.cta-title {
+.contact-info h2 {
     font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
 }
 
-.cta-subtitle {
-    font-size: var(--text-xl);
-    max-width: 700px;
-    margin: 0 auto;
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
 }
 
-.cta-buttons {
+.contact-method {
     display: flex;
+    align-items: flex-start;
     gap: var(--space-4);
-    justify-content: center;
-    flex-wrap: wrap;
+    padding: var(--space-4);
+    background: rgba(59, 130, 246, 0.05);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    border-radius: var(--border-radius-lg);
+    transition: all var(--transition-base);
+}
+
+.contact-method:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--color-accent-primary);
+    transform: translateX(5px);
+}
+
+.method-icon {
+    font-size: var(--text-3xl);
+    line-height: 1;
+}
+
+.contact-method h4 {
+    font-size: var(--text-base);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.contact-method p,
+.contact-method a {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+}
+
+.contact-method a:hover {
+    color: var(--color-accent-primary);
+}
+
+/* Contact Form */
+.contact-form-container {
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-xl);
+    padding: var(--space-10);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.form-group label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-input {
+    padding: var(--space-4);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    color: var(--color-text-primary);
+    font-size: var(--text-base);
+    font-family: var(--font-primary);
+    transition: all var(--transition-base);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-input::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+select.form-input {
+    cursor: pointer;
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-loading {
+    display: none;
+}
+
+.form-status {
+    padding: var(--space-4);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    font-weight: 500;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--color-success);
+    color: var(--color-success);
+}
+
+.form-status.error {
+    display: block;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid #ef4444;
+    color: #ef4444;
+}
+
+@media (max-width: 968px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+
+    .contact-form-container {
+        padding: var(--space-8);
+    }
 }
 
 .btn-lg {
     padding: var(--space-5) var(--space-10);
     font-size: var(--text-lg);
 }
+
 
 /* Footer */
 .footer {
