@@ -1,0 +1,31 @@
+{
+  "name": "rkbe-portfolio",
+  "description": "Portfolio personal de Raj Kumar Bhag - rkbe.tech",
+  "type": "docker",
+  "dockerfile": "./Dockerfile",
+  "buildPath": "/",
+  "port": 80,
+  "domains": [
+    {
+      "domain": "rkbe.tech",
+      "ssl": true,
+      "forceHttps": true
+    },
+    {
+      "domain": "www.rkbe.tech",
+      "ssl": true,
+      "forceHttps": true
+    }
+  ],
+  "env": {
+    "TZ": "America/Asuncion"
+  },
+  "healthCheck": {
+    "enabled": true,
+    "path": "/",
+    "interval": 30,
+    "timeout": 10,
+    "retries": 3
+  },
+  "restart": "unless-stopped"
+}

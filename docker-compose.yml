@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: rkbe-portfolio
+    restart: unless-stopped
+    ports:
+      # Solo exponer en localhost para uso con Nginx proxy
+      - "127.0.0.1:8080:80"
+      # Para uso standalone sin proxy, descomentar:
+      # - "80:80"
+      # - "443:443"
+    volumes:
+      # Para certificados SSL (si se usan dentro del container)
+      # - ./certs:/etc/nginx/certs:ro
+      # Para logs
+      - ./logs:/var/log/nginx
+    environment:
+      - TZ=America/Asuncion
+    healthcheck:
+      test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
+
+# Para uso con Let's Encrypt y Certbot, descomentar:
+# volumes:
+#   certbot-etc:
+#   certbot-var:
+#
+# services:
+#   certbot:
+#     image: certbot/certbot
+#     container_name: certbot
+#     volumes:
+#       - certbot-etc:/etc/letsencrypt
+#       - certbot-var:/var/lib/letsencrypt
+#       - ./web:/var/www/html
+#     depends_on:
+#       - web
+#     command: certonly --webroot --webroot-path=/var/www/html --email rkbe.tech@gmail.com --agree-tos --no-eff-email -d rkbe.tech -d www.rkbe.tech

@@ -96,19 +96,123 @@ El sitio utiliza CSS Custom Properties para facilitar la personalización. Puede
 
 ## 🚀 Despliegue
 
+> [!WARNING]
+> **Importante para Producción:** Este proyecto requiere configuración SSL/HTTPS para evitar advertencias de "sitio no seguro" en navegadores. El Dockerfile base solo expone puerto 80 (HTTP).
+
+### 🎯 Despliegue en Hostinger VPS con Dokploy (Recomendado)
+
+Este proyecto está configurado para desplegarse en **Hostinger VPS** usando **Dokploy** y **GitHub**.
+
+**Guía rápida (20 minutos):**
+
+📖 **[Guía Rápida de Dokploy](docs/QUICK-START-DOKPLOY.md)** ⚡
+
+**Guía completa paso a paso:**
+
+📖 **[Guía Completa de Despliegue con Dokploy](docs/DOKPLOY-DEPLOYMENT.md)**
+
+**Pasos resumidos:**
+1. Subir código a GitHub
+2. Configurar DNS en Hostinger (apuntar a IP del VPS)
+3. Crear aplicación en Dokploy
+4. Configurar dominios `rkbe.tech` y `www.rkbe.tech` con SSL
+5. Deploy automático
+
+**Resultado:** HTTPS automático con Let's Encrypt, sin configuración manual de certificados.
+
+---
+
+### Despliegue en Producción con HTTPS (Otros métodos)
+
+Para otros métodos de despliegue con certificado SSL de Let's Encrypt:
+
+📖 **[Guía de Despliegue Completa](docs/DEPLOYMENT.md)**
+
+Esta guía incluye:
+- Configuración de Nginx con SSL
+- Obtención de certificados Let's Encrypt
+- Configuración de renovación automática
+- Headers de seguridad
+- Troubleshooting
+
+### Método Rápido: Docker + Nginx en Host
+
+```bash
+# 1. Construir y ejecutar el contenedor
+docker-compose up -d
+
+# 2. Configurar Nginx en el host como proxy reverso
+# Ver docs/DEPLOYMENT.md para configuración detallada
+
+# 3. Obtener certificado SSL
+sudo certbot --nginx -d rkbe.tech -d www.rkbe.tech
+```
+
+### Despliegue Local (Desarrollo)
+
+Para desarrollo local sin SSL:
+
+```bash
+# Opción 1: Docker Compose
+docker-compose up
+
+# Opción 2: Docker directo
+docker build -t rkbe-portfolio .
+docker run -p 80:80 rkbe-portfolio
+
+# Opción 3: Servidor simple
+python3 -m http.server 8000
+```
+
 ### VPS con Nginx
+
+Para configuración manual en VPS:
 
 1. Subir archivos al servidor:
 ```bash
 rsync -avz --progress ./ user@vps-ip:/var/www/rkbe.tech/
 ```
 
-2. Configurar Nginx (ver `docs/nginx.conf` para ejemplo)
-
-3. Configurar SSL con Let's Encrypt:
+2. Configurar Nginx y SSL:
 ```bash
+# Copiar configuración de Nginx
+sudo cp nginx.conf /etc/nginx/sites-available/rkbe.tech
+sudo ln -s /etc/nginx/sites-available/rkbe.tech /etc/nginx/sites-enabled/
+
+# Obtener certificado SSL
 sudo certbot --nginx -d rkbe.tech -d www.rkbe.tech
 ```
+
+Ver [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) para instrucciones completas.
+
+
+## 🔒 Seguridad
+
+El sitio implementa las siguientes medidas de seguridad cuando se despliega correctamente:
+
+- ✅ HTTPS con certificados Let's Encrypt
+- ✅ HSTS (HTTP Strict Transport Security)
+- ✅ Content Security Policy (CSP)
+- ✅ X-Frame-Options (protección contra clickjacking)
+- ✅ X-Content-Type-Options (prevención de MIME sniffing)
+- ✅ Referrer Policy
+- ✅ TLS 1.2+ únicamente
+
+**Nota:** Estas configuraciones requieren el uso del archivo `nginx.conf` incluido.
+
+## 🆘 Troubleshooting
+
+Si experimentas problemas con certificados SSL o el mensaje "sitio no seguro":
+
+📖 **[Guía de Troubleshooting SSL](docs/SSL-TROUBLESHOOTING.md)**
+
+Problemas comunes cubiertos:
+- Certificado inválido o expirado
+- Error de validación DNS
+- Demasiadas redirecciones
+- Puerto 443 no responde
+- Renovación automática no funciona
+
 
 ## 📊 SEO y Analytics
 
